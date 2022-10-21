@@ -35,14 +35,15 @@ img {
 	--base-color-second: hsl(var(--hue) 65% 88%);
 	--base-color-alt: hsl(var(--hue) 57% 53%);
 	--title-color: hsl(var(--hue) 41% 10%);
-	--text-color: hsl(0 0% 46%);
+	--text-color: hsl(0 0% 35%);
 	--text-color-light: hsl(0 0% 98%);
 	--body-color: hsl(0 0% 98%);
 
 	--title-font: 'Poppins', sans-serif;
 	--body-font: 'DM Sans', sans-serif;
 
-	--title-font-size: 1.875rem;
+	/* title font size originally: 1.875rem */
+	--title-font-size: 1.625rem; 
 	--subtitle-font-size: 1rem;
 }
 
