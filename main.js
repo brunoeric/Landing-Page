@@ -23,6 +23,37 @@ for(const link of links) {
 		})
 }
 
+
+
+/* Home slideshow */
+
+let time = 5000,
+		currentImageIndex = 0,
+		images = document.querySelectorAll("#slideshow img"),
+		numberOfImages = images.length;
+
+function showNextImage() {
+
+	images[currentImageIndex].classList.remove("selected");
+
+	currentImageIndex++;
+
+	if(currentImageIndex >= numberOfImages) {
+		currentImageIndex = 0;
+	}
+
+	images[currentImageIndex].classList.add("selected");
+}
+
+function startSlideshow() {
+	setInterval( () => {
+		showNextImage()
+	}, time)
+}
+
+window.addEventListener("load", startSlideshow);
+
+
 /* Testimonials Carousel Slider from - Swiper */
 
 const swiper = new Swiper('.swiper-container', {
@@ -59,13 +90,14 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-
 /* On Scroll */
 
 window.addEventListener('scroll', function () {
 	changeHeaderWhenScrolling();
 	activateMenuAtCurrentSection()
 });
+
+
 
 /* header shadow toggle*/
 
@@ -81,6 +113,8 @@ function changeHeaderWhenScrolling() {
 		header.classList.remove('scroll');
 	}
 }
+
+
 
 /* active nav button depending of the current site section on scroll */
 
@@ -118,6 +152,8 @@ function activateMenuAtCurrentSection() {
 	}
 
 }
+
+
 
 /* show site sections with delay when scrolling - from ScrollReveal */
 
