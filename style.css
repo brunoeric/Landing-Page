@@ -79,9 +79,10 @@ body {
 }
 
 .divider-1 {
-	height: 1px;
+	height: 2px;
 	background: linear-gradient(
-		270deg,
+		90deg,
+		hsla(var(--hue), 65%, 88%, 0.34),
 		hsla(var(--hue), 36%, 57%, 1),
 		hsla(var(--hue), 65%, 88%, 0.34)		
 	);
@@ -111,6 +112,10 @@ body {
 .section {
 	padding: calc(4rem + var(--header-height)) 0;
 	/* min-height: 100vh; */
+}
+
+section:nth-of-type(even) {
+	background-color: rgba(129, 129, 129, 0.05);
 }
 
 .section .subtitle {
