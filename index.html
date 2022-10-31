@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- TODO Colocar nome da Empresa -->
     <title>Premier Cortinas e Persianas</title>
 
     <!-- Swiper -->
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
     <link rel="stylesheet" href="style.css">
     
@@ -94,18 +93,37 @@
 
       <section 
         id="home"
-        class="section" >
-        <div 
-          class="container grid">
-          <div id="slideshow">
-            <img src="assets/picture/landscape/3.jpeg" alt="Foto de um cômodo de uma casa bem-decorado">
-            <img src="assets/picture/landscape/5.jpeg" alt="">
-            <img class="selected" src="assets/picture/landscape/6.jpeg" alt="">
+        class="section stick-to-top">
 
-          </div>
+        <div class="container grid">
+
+          <div class="swiper">
+            <div class="swiper-container">
+              <div id="slideshow" class="swiper-wrapper">
+
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="assets/picture/landscape/1.jpeg" alt="">
+                </div>
+                
+                <div class="swiper-slide">
+                  <img src="assets/picture/landscape/2.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/picture/landscape/3.jpeg" alt="">
+                </div>
+
+              </div>
+            </div> <!-- swiper-container -->
+              
+            <div class="swiper-pagination"></div>
+
+          </div> <!-- swiper -->
 
           <div
             class="text">
+
             <h2 class="title">Beleza e utilidade para o seu lar!</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, aliquid quaerat aut iure perferendis quas iusto veniam ipsum quibusdam tenetur.
@@ -116,6 +134,7 @@
                 Agendar um horário
                 <!-- Tire suas dúvidas / Fale conosco! -->
               </a>
+
           </div>
         </div>
       </section>
@@ -128,7 +147,7 @@
       <!-- ABOUT -->
 
       <section 
-      class="section" 
+      class="section stick-to-top" 
       id="about">
         <div 
         class="container grid">
@@ -155,78 +174,89 @@
       class="section" 
       id="products">
         <div 
-        class="container grid">
+        class="container">
 
           <header>
             <h2 class="title">Produtos</h2>
             <p class="subtitle">A <strong>Premier Cortinas e Persianas</strong> se compromete com a satisfação dos clientes e traz produtos personalizados.</p>
           </header>
 
-          <div class="cards grid">
-
-            <div class="card">
-              <div 
-              id="card-cortina"
-              class="card-image"></div>
-
-              <div class="card-text">
-                <h3 class="title">Cortinas</h3>
-                <p>
-                  Feitas sob medida, com seu tecido, cor e proporção de preferência.
-                </p>
-              </div>
-
-            </div>
-            
-            <div 
-            class="card">
-              <div 
-              class="card-image">
-              </div>
-                <div class="card-text">
-                  <h3 class="title">
-                    Persianas
-                  </h3>
-                  <p>
-                    Rolô, Romanas, Verticais e Horizontais,
-                    <i></i>
-                  </p>
-                </div>
+          <div class="cards">
+            <div class="swiper"> 
               
-            </div>
-
-            <div class="card">
-              <div 
-              id="card-cortina"
-              class="card-image"> 
-              </div>
-              <div class="card-text">
-                <h3 class="title">Almofadas</h3>
-                <p>
-                  Feitas sob medida, com seu tecido, cor e proporção de preferência.
-                </p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div 
-              id="card-cortina"
-              class="card-image"> 
-              </div>
-              <div class="card-text">
-                <h3 class="title">Acessórios</h3>
-                <p>
-                  Feitas sob medida, com seu tecido, cor e proporção de preferência.
-                </p>
-              </div>
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+    
+                    <div id="card-cortina" class="card swiper-slide">
+    
+                      <img src="assets/picture/landscape/3.jpeg" alt="" class="card-image">
+        
+                      <div class="card-text">
+                        <h3 class="title">Cortinas</h3>
+                        <p>
+                          Feitas sob medida, com seu tecido, cor e proporção de preferência.
+                        </p>
+                      </div>
+        
+                    </div>              
+    
+                    <div id="card-persianas" class="card swiper-slide">
+    
+                      <img src="assets/picture/products/persianas/3.jpeg" alt="" class="card-image">
+    
+                      <div class="card-text">
+                        <h3 class="title">
+                          Persianas
+                        </h3>
+                        <p>
+                          Disponíveis em diversos modelos: Rolô, Romanas, Verticais e Horizontais.
+                        </p>
+                      </div>
+    
+                    </div>
+    
+                    <div id="card-almofadas" class="card swiper-slide">
+    
+                      <img src="assets/picture/products/almofadas/8.jpeg" alt="" class="card-image">
+        
+                      <div class="card-text">
+                        <h3 class="title">Almofadas</h3>
+                        <p>
+                          Feitas sob medida, com seu tecido, cor e proporção de preferência.
+                        </p>
+                      </div>
+                    </div>
+        
+                    <div id="card-acessorios" class="card swiper-slide">
+                      
+                      <img src="" alt="" class="card-image">
+        
+                      <div class="card-text">
+                        <h3 class="title">Acessórios</h3>
+                        <p>
+                          Feitas sob medida, com seu tecido, cor e proporção de preferência.
+                        </p>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+    
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
 
           </div>
+
         </div>
 
       </section>
 
       <div class="divider-1"></div>
+
+      </section>
+
+      <div class="divider-2"></div>
 
 
 
@@ -252,7 +282,7 @@
                     </p>
       
                     <cite>
-                      <img src="#" alt="Foto de um cliente">
+                      <img src="assets/svg/user.svg" alt="Foto de um cliente">
                       Cliente 1
                     </cite>
                   </blockquote>
@@ -266,25 +296,11 @@
                     </p>
       
                     <cite>
-                      <img src="#" alt="Foto de um cliente">
+                      <img src="assets/svg/user.svg" alt="Foto de um cliente">
                       Cliente 2
                     </cite>
                   </blockquote>
                 </div>
-  
-                <div class="testimonial swiper-slide">
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, expedita quod soluta aspernatur tempora necessitatibus quo, ipsam rerum neque eaque praesentium doloribus sapiente atque eum similique sed a animi aut?
-                    </p>
-      
-                    <cite>
-                      <img src="#" alt="Foto de um cliente">
-                      Cliente 3
-                    </cite>
-                  </blockquote>
-                </div>
 
                 <div class="testimonial swiper-slide">
                   <blockquote>
@@ -294,63 +310,7 @@
                     </p>
       
                     <cite>
-                      <img src="#" alt="Foto de um cliente">
-                      Cliente 4
-                    </cite>
-                  </blockquote>
-                </div>
-
-                <div class="testimonial swiper-slide">
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, expedita quod soluta aspernatur tempora necessitatibus quo, ipsam rerum neque eaque praesentium doloribus sapiente atque eum similique sed a animi aut?
-                    </p>
-      
-                    <cite>
-                      <img src="#" alt="Foto de um cliente">
-                      Cliente 5
-                    </cite>
-                  </blockquote>
-                </div>
-
-                <div class="testimonial swiper-slide">
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, expedita quod soluta aspernatur tempora necessitatibus quo, ipsam rerum neque eaque praesentium doloribus sapiente atque eum similique sed a animi aut?
-                    </p>
-      
-                    <cite>
-                      <img src="#" alt="Foto de um cliente">
-                      Cliente 6
-                    </cite>
-                  </blockquote>
-                </div>
-
-                <div class="testimonial swiper-slide">
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, expedita quod soluta aspernatur tempora necessitatibus quo, ipsam rerum neque eaque praesentium doloribus sapiente atque eum similique sed a animi aut?
-                    </p>
-      
-                    <cite>
-                      <img src="#" alt="Foto de um cliente">
-                      Cliente 7
-                    </cite>
-                  </blockquote>
-                </div>
-
-                <div class="testimonial swiper-slide">
-                  <blockquote>
-                    <p>
-                      <span>&ldquo;</span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, expedita quod soluta aspernatur tempora necessitatibus quo, ipsam rerum neque eaque praesentium doloribus sapiente atque eum similique sed a animi aut?
-                    </p>
-      
-                    <cite>
-                      <img src="#" alt="Foto de um cliente">
+                      <img src="assets/svg/user.svg" alt="Foto de um cliente">
                       Cliente 8
                     </cite>
                   </blockquote>
@@ -364,7 +324,7 @@
                     </p>
       
                     <cite>
-                      <img src="#" alt="Foto de um cliente">
+                      <img src="assets/svg/user.svg" alt="Foto de um cliente">
                       Cliente Último
                     </cite>
                   </blockquote>
@@ -381,8 +341,7 @@
         </div>
       </section>
 
-      <div class="divider-2"></div>
-
+      <div class="divider-1"></div>
 
 
       <!-- CONTACT -->
@@ -461,7 +420,7 @@
         </div>
       </section>
 
-      <div class="divider-1"></div>
+      <div class="divider-2"></div>
 
     </main>
     
