@@ -100,8 +100,24 @@ body {
 
 	/* Swiper layout */
 
+/* .swiper-pagination {
+	display: flex;
+	justify-content: center;
+	gap: 0.3rem;
+} */
+
+.swiper-pagination-bullet {
+	width: 0.875rem;
+	height: 0.875rem;
+
+	opacity: 0.5;
+	background-color: black;
+}
+
 .swiper-pagination-bullet-active {
+	border: 1px solid var(--text-color-light);
 	background: var(--base-color);
+	opacity: 1;
 }
 
 /* - - - - - - LAYOUT - - - - - - */
@@ -306,7 +322,7 @@ nav.show div#close-icon{
 	/* position: relative; */
 	
 	width: 100vmin;
-	height: 56vmin;
+	height:56.25vmin;
 }
 
 #home #slideshow img {
@@ -317,17 +333,6 @@ nav.show div#close-icon{
 	height: 100%;
 
 	object-fit: cover;
-}
-
-#home .swiper-pagination-bullet {
-	background-color: black;
-	opacity: 0.35;
-}
-
-#home .swiper-pagination-bullet-active {
-	border: 1px solid var(--base-color-alt);
-	background: var(--base-color);
-	opacity: 1;
 }
 
 /* #home #slideshow::before {
@@ -368,8 +373,8 @@ nav.show div#close-icon{
 }
 
 #about .image {
-	position: relative;
-	/* margin: auto; */
+	/* position: relative; */
+	margin: auto;
 }
 
 /* #about .image::before {
@@ -518,6 +523,11 @@ nav.show div#close-icon{
 	padding: 4rem 1rem;
 }
 
+#testimonials .swiper-pagination-bullet-active {
+	border: 1px solid var(--base-color);
+	background: var(--base-color);
+}
+
 /* ------- CONTACT --------- */
 
 #contact .grid {
@@ -600,7 +610,7 @@ footer .social a:hover {
 
 /* - - - - - - - MEDIA QUERIES - - - - - - - */
 
-@media (min-width: 1200px) or (landscape) {
+@media (min-width: 1200px),(landscape) {
 
 	/* - - - - - - LAYOUT - - - - - - */
 

@@ -33,11 +33,13 @@ for(const link of links) {
 	const swiperHome = new Swiper('#home .swiper-container', {
 		allowTouchMove: false,
 		mousewheel: false,
-		keyboard: false,
+		keyboard: true,
 
 		pagination: {
 			el: '#home .swiper-pagination',
-			clickable: true
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 1
 		},
 
 		effect: 'fade',
@@ -45,7 +47,7 @@ for(const link of links) {
 		loop: true,
 
 		autoplay: {
-			delay: 2000,
+			delay: 8000,
 			disableOnInteraction: false,
 			pauseOnMouseEnter: true,
 		}
@@ -87,11 +89,11 @@ for(const link of links) {
 			// type: 'fraction',
 			clickable: true,
 			dynamicBullets: true,
-			dynamicMainBullets: 2
+			dynamicMainBullets: 1
 		},
 
 		autoplay: {
-			delay: 3000,
+			delay: 10000,
 			disableOnInteraction: false,
 			pauseOnMouseEnter: true,
 		},
