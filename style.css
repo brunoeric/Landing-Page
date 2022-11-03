@@ -1,5 +1,3 @@
-/* Parei na aula 02 do projeto aos 00:31:47 */
-
 /* ------ Global Reset ------ */
 * {
 	margin: 0;
@@ -15,27 +13,19 @@ a {
 	text-decoration: none;
 }
 
-img {
-	width: 100%;
-	height: auto;
-}
-
 /* ------ Variables ------ */
 :root {
-	--header-height: 4.5rem;
+	--header-height: 4rem;
 	--nav-icon-size: 1.5rem;
 
 	/* Colors: */
-	/* hsl marrom logo: hsl(8 34% 42%) */
-	/* hsl vermelho logo hsl(4, 64%, 42%) */
-	/* hsl original: hsl(159 36% 57%) */
 	--hue: 4;
-	/* Variações de tom */
 	--base-color: hsl(var(--hue) 64% 42%);
 	--base-color-second: hsl(var(--hue) 65% 88%);
 	--base-color-alt: hsl(var(--hue) 57% 53%);
 	--title-color: hsl(var(--hue) 41% 10%);
-	--text-color: hsl(0 0% 35%);
+  
+	--text-color: hsl(0 0% 40%);
 	--text-color-light: hsl(0 0% 98%);
 	--body-color: hsl(0 0% 98%);
 
@@ -85,21 +75,39 @@ body {
 }
 
 .divider-1 {
-	height: 1px;
+	height: 2px;
 	background: linear-gradient(
-		270deg,
-		hsla(var(--hue), 36%, 57%, 1),
-		hsla(var(--hue), 65%, 88%, 0.34)		
+		90deg,
+		hsla(var(--hue), 65%, 88%, 0.3),
+		hsla(var(--hue), 36%, 57%, 0.75),
+		hsla(var(--hue), 65%, 88%, 0.3)		
 	);
 }
 
 .divider-2 {
-	height: 1px;
+	height: 2px;
 	background: linear-gradient(
 		270deg,
-		hsla(var(--hue), 65%, 88%, 0.34),
-		hsla(var(--hue), 36%, 57%, 1)
+		hsla(var(--hue), 36%, 57%, 0.75),
+		hsla(var(--hue), 65%, 88%, 0.3),
+		hsla(var(--hue), 36%, 57%, 0.75)
 	);
+}
+
+	/* Swiper layout */
+
+.swiper-pagination-bullet {
+	width: 0.875rem;
+	height: 0.875rem;
+
+	opacity: 0.5;
+	background-color: black;
+}
+
+.swiper-pagination-bullet-active {
+	border: 1px solid var(--text-color-light);
+	background: var(--base-color);
+	opacity: 1;
 }
 
 /* - - - - - - LAYOUT - - - - - - */
@@ -115,8 +123,15 @@ body {
 }
 
 .section {
-	padding: calc(4rem + var(--header-height)) 0;
-	/* min-height: 100vh; */
+	padding: calc(var(--header-height) + 3rem) 0;
+}
+
+.section.stick-to-top {
+	padding: var(--header-height) 0;
+}
+
+section:nth-of-type(even) {
+	background-color: hsl(0, 0%, 96%);
 }
 
 .section .subtitle {
@@ -245,7 +260,7 @@ nav.show .menu ul {
 }
 
 nav.show ul.grid {
-	gap: 4rem;
+	gap: 8vh;
 }
 
 
@@ -289,19 +304,28 @@ nav.show div#close-icon{
 
 /* - - - - - - HOME - - - - - - */
 
-#home {
-	overflow: hidden;
-}
-
 #home .container {
 	margin: 0;
 }
 
-#home .image {
-	position: relative;
+#home #slideshow {
+	/* position: relative; */
+	
+	width: 100vmin;
+	height:56.25vmin;
 }
 
-#home .image::before {
+#home #slideshow img {
+	/* position: absolute; */
+	/* right: 2.93rem; */
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+/* #home #slideshow::before {
 	content: '';
 	height: 100%;
 	width: 100%;
@@ -310,17 +334,12 @@ nav.show div#close-icon{
 	top: -16.8%;
 	left: 16.7%;
 	z-index: 0;
-}
+} */
 
-#home .image img {
-	position: relative;
-	right: 2.93rem;
-}
-
-#home .image img, 
-#home .image::before {
+/* #home #slideshow img, 
+#home #slideshow::before {
 	border-radius: 0.25rem;
-}
+} */
 
 #home .text {
 	margin-left: 1.5rem;
@@ -339,19 +358,16 @@ nav.show div#close-icon{
 
 /* ------- ABOUT --------- */
 
-/* #about {
-
-} */
-
 #about .container {
 	margin: 0;
 }
 
 #about .image {
-	position: relative;
+	/* position: relative; */
+	margin: auto;
 }
 
-#about .image::before {
+/* #about .image::before {
 	content: '';
 	height: 100%;
 	width: 100%;
@@ -360,16 +376,18 @@ nav.show div#close-icon{
 	top: -8.3%;
 	left: -33%;
 	z-index: 0;
-}
+} */
 
 #about .image img {
-	position: relative;
+	/* position: relative; */
+	width: 100vmin;
+	height: 56vmin;
 }
 
-#about .image img, 
+/* #about .image img, 
 #about .image::before {
 	border-radius: 0.25rem;
-}
+} */
 
 #about .text {
 	margin-left: 1.5rem;
@@ -378,51 +396,67 @@ nav.show div#close-icon{
 
 /* ------- PRODUCTS --------- */
 
-.cards.grid {
-	justify-content: center;
-	gap: 1.5rem;
+#products .container {
+	margin: auto;
 }
 
-.card {
-	/* width: 25rem; */
-	/* max-width: 80vw; */
-	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+#products header > * {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+#products .swiper-container {
+	width: 70vmin;
+	height: max-content;
+	margin: auto;
+}
+
+#products div.card.swiper-slide {
+	height: fit-content;
+	
+	background-color: var(--body-color);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
 	border-bottom: 0.25rem solid var(--base-color);
-	border-radius: 0.25rem 0.25rem 0 0;
+	border-radius: 0.3rem 0.3rem 0 0;
 	
 	text-align: center;
 }
 
-.card-image {
-	/* height: 21.875rem;
-	max-height: 100%;
-	width: 21.875rem;
-	max-width: 100%; */
+.swiper-button-prev {
+	/* left: 0; */
+	color: var(--base-color);
+}
+
+.swiper-button-next {
+	/* right: 0; */
+	color: var(--base-color);
+
+}
+
+#products .card-image {
+	width: 100%;
+	height: 44.8vmin;
 
 	margin-bottom: 1.5rem;
-	border-radius: 0.25rem 0.25rem 0 0;
+	border-radius: 0.3rem 0.3rem 0 0;
 	
 	background-size: cover;
 }
 
-#card-cortina {
-	background-image: url("assets/picture/1.jpeg");
-}
-
-.card .title {
+#products .card .title {
 	font-size: 1.5rem;
-	margin-bottom: 0.75;
+	margin-bottom: 0.75rem;
 }
 
-.card-text {
+#products .card-text {
 	padding: 0 2rem 3.625rem 2rem;
 }
 
 /* ------- TESTIMONIALS --------- */
 
-#testimonials {
+/* #testimonials {
 	background-color: white;
-}
+} */
 
 #testimonials .container {
 	/* text-align: center; */
@@ -472,14 +506,15 @@ nav.show div#close-icon{
 	margin-right: 0.5rem;
 }
 
-/* swiper */
+/* Testimonials Swiper */
 
-.swiper-slide {
+#testimonials .swiper-slide {
 	height: auto;
 	padding: 4rem 1rem;
 }
 
-.swiper-pagination-bullet-active {
+#testimonials .swiper-pagination-bullet-active {
+	border: 1px solid var(--base-color);
 	background: var(--base-color);
 }
 
@@ -496,8 +531,6 @@ nav.show div#close-icon{
 #contact .button #whatsapp-icon,
 #contact ul li .links-icon {
 	margin-right: 0.625rem;
-	/* width: 1.5rem;
-	height: 1.5rem; */
 }
 
 #contact ul.grid {
@@ -565,12 +598,12 @@ footer .social a:hover {
 
 /* - - - - - - - MEDIA QUERIES - - - - - - - */
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px),(landscape) {
 
 	/* - - - - - - LAYOUT - - - - - - */
 
 	.container {
-		max-width: 1120px;
+		width: 1120px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -626,11 +659,23 @@ footer .social a:hover {
 		grid-auto-flow: column;
 		justify-content: space-between;
 		margin: 0 auto;
+		gap: 5rem;
 	}
 	
-	#home .image {
+	#home .text {
+		margin-left: 0;
+		/* margin-right: 5rem; */
+	}
+
+	#home #slideshow {
 		order: 1;
-		/* width: 40rem; */
+		width: 700px;
+		height: 392px;
+	}
+
+	#home #slideshow::before {
+		top: -15%;
+		left: 5%;
 	}
 
 	#home .text {
@@ -651,12 +696,6 @@ footer .social a:hover {
 	.cards {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
-
-	/* Caso seja com ícones ou imagens que não vão até a borda do card */
-	/* .card {
-		padding-left: 3rem;
-		padding-right: 3rem;
-	} */
 
 	/* Testimonials */
 
@@ -698,5 +737,6 @@ footer .social a:hover {
 	:root {
 		--title-font-size: 2.25rem;
 		--subtitle-font-size: 1.125rem;
+		--header-height: 4.5rem;
 	}
 }

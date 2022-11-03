@@ -1,4 +1,4 @@
-/* menu toggle */
+/* Menu Toggle */
 
 const nav = document.querySelector(
 	'#header nav');
@@ -23,39 +23,92 @@ for(const link of links) {
 		})
 }
 
-/* Testimonials Carousel Slider from - Swiper */
 
-const swiper = new Swiper('.swiper-container', {
-	mousewheel: false,
-	keyboard: true,
 
-	loop: true,
-	slidesPerView: 1,
 
-	pagination: {
-    el: '.swiper-pagination',
-    // type: 'fraction',
-		clickable: true,
-		dynamicBullets: true,
-		dynamicMainBullets: 2
-  },
+/* Swiper.js */
 
-	autoplay: {
-		delay: 8000,
-		disableOnInteraction: false,
-		pauseOnMouseEnter: true,
-	},
+	/* Home slideshow */
 
-	breakpoints: {
-		767: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			setWrapperSize: true,
-			loopFillGroupWithBlank: true,
-			grabCursor: true
+	const swiperHome = new Swiper('#home .swiper-container', {
+		allowTouchMove: false,
+		mousewheel: false,
+		keyboard: true,
+
+		pagination: {
+			el: '#home .swiper-pagination',
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 1
+		},
+
+		effect: 'fade',
+		speed: 1500,
+		loop: true,
+
+		autoplay: {
+			delay: 8000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
 		}
-	}
-});
+	});
+
+ 	/* Products Carousel Slider */
+	
+	 const swiperProducts = new Swiper('#products .swiper-container', {
+		allowTouchMove: true,
+		mousewheel: false,
+		keyboard: true,
+
+		initialSlide: 1,
+
+		effect: 'cards',
+		cardsEffect: {
+			perSlideOffset: 75,
+			slideShadows: false,
+			perSlideRotate: 2
+		},
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	/* Testimonials Carousel Slider */
+
+	const swiperTestimonials = new Swiper('#testimonials .swiper-container', {
+		mousewheel: false,
+		keyboard: true,
+
+		loop: true,
+		slidesPerView: 1,
+
+		pagination: {
+			el: '#testimonials .swiper-pagination',
+			// type: 'fraction',
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 1
+		},
+
+		autoplay: {
+			delay: 10000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
+		},
+
+		breakpoints: {
+			767: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				setWrapperSize: true,
+				loopFillGroupWithBlank: true,
+				grabCursor: true
+			}
+		}
+	});
+
 
 
 
@@ -67,75 +120,75 @@ window.addEventListener('scroll', function () {
 	activateMenuAtCurrentSection()
 });
 
-/* header shadow toggle*/
+	/* header shadow toggle*/
 
-const header = document.querySelector(
-	'#header');
-const headerHeight = header.offsetHeight;
+	const header = document.querySelector(
+		'#header');
+	const headerHeight = header.offsetHeight;
 
-function changeHeaderWhenScrolling() {
-	
-	if (this.window.scrollY >= headerHeight) {
-		header.classList.add('scroll');
-	} else {
-		header.classList.remove('scroll');
-	}
-}
-
-/* active nav button depending of the current site section on scroll */
-
-const sections = document.querySelectorAll(
-	'main section[id]');
-
-function activateMenuAtCurrentSection() {
-
-	const activeSessionObserverPosition = window.pageYOffset + (window.innerHeight / 8) * 4;
-
-	for (const section of sections) {
-		const sectionTop = section.offsetTop;
-		const sectionHeight = section.offsetHeight;
-		const sectionId =  section.getAttribute("id");
-
-		const isAfterTop = 
-		activeSessionObserverPosition >= 
-		sectionTop;
-
-		const isBeforeBottom = 
-		activeSessionObserverPosition <= 
-		sectionTop + sectionHeight;
-
-		if (isAfterTop && isBeforeBottom) {
-			document
-				.querySelector(`nav ul li a[href*="${sectionId}"]`)
-				.classList.add('active');
-				
+	function changeHeaderWhenScrolling() {
+		
+		if (this.window.scrollY >= headerHeight) {
+			header.classList.add('scroll');
 		} else {
+			header.classList.remove('scroll');
+		}
+	}
+
+	/* active nav button depending of the current site section on scroll */
+
+	const sections = document.querySelectorAll(
+		'main section[id]');
+
+	function activateMenuAtCurrentSection() {
+
+		const activeSessionObserverPosition = window.pageYOffset + (window.innerHeight / 8) * 4;
+
+		for (const section of sections) {
+			const sectionTop = section.offsetTop;
+			const sectionHeight = section.offsetHeight;
+			const sectionId =  section.getAttribute("id");
+
+			const isAfterTop = 
+			activeSessionObserverPosition >= 
+			sectionTop;
+
+			const isBeforeBottom = 
+			activeSessionObserverPosition <= 
+			sectionTop + sectionHeight;
+
+			if (isAfterTop && isBeforeBottom) {
 				document
-				.querySelector(`nav ul li a[href*="${sectionId}"]`)
-				.classList.remove('active');
+					.querySelector(`nav ul li a[href*="${sectionId}"]`)
+					.classList.add('active');
+					
+			} else {
+					document
+					.querySelector(`nav ul li a[href*="${sectionId}"]`)
+					.classList.remove('active');
+			}
+
 		}
 
 	}
 
-}
+	/* show site sections with delay when scrolling - from ScrollReveal */
 
-/* show site sections with delay when scrolling - from ScrollReveal */
+	const scrollReveal = ScrollReveal({
+		origin: 'top',
+		distance: '30px',
+		duration: 700,
+		reset:true
+	});
 
-const scrollReveal = ScrollReveal({
-	origin: 'top',
-	distance: '30px',
-	duration: 700,
-	reset:true
-});
-
-scrollReveal.reveal(
-	`
-	#home .image, #home .text,
-	#about .image, #about .text,
-	#products header, #products .card,
-	#testimonials header, #testimonials .testimonials,
-	#contact .text, #contact .links,
-	footer .brand, footer .social
-	`,
-	{ interval: 150}
-);
+	scrollReveal.reveal(
+		`
+		#home .image, #home .text,
+		#about .image, #about .text,
+		#products header, #products .swiper,
+		#testimonials header, #testimonials .testimonials,
+		#contact .text, #contact .links,
+		footer .brand, footer .social
+		`,
+		{ interval: 150 }
+	);
