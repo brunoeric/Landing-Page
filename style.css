@@ -1,5 +1,3 @@
-/* Parei na aula 02 do projeto aos 00:31:47 */
-
 /* ------ Global Reset ------ */
 * {
 	margin: 0;
@@ -21,11 +19,7 @@ a {
 	--nav-icon-size: 1.5rem;
 
 	/* Colors: */
-	/* hsl marrom logo: hsl(8 34% 42%) */
-	/* hsl vermelho logo hsl(4, 64%, 42%) */
-	/* hsl original: hsl(159 36% 57%) */
 	--hue: 4;
-	/* Variações de tom */
 	--base-color: hsl(var(--hue) 64% 42%);
 	--base-color-second: hsl(var(--hue) 65% 88%);
 	--base-color-alt: hsl(var(--hue) 57% 53%);
@@ -99,12 +93,6 @@ body {
 }
 
 	/* Swiper layout */
-
-/* .swiper-pagination {
-	display: flex;
-	justify-content: center;
-	gap: 0.3rem;
-} */
 
 .swiper-pagination-bullet {
 	width: 0.875rem;
@@ -447,7 +435,7 @@ nav.show div#close-icon{
 	width: 100%;
 	height: 44.8vmin;
 
-	margin-bottom: 1.5rem; /* 1.5rem originally */
+	margin-bottom: 1.5rem;
 	border-radius: 0.3rem 0.3rem 0 0;
 	
 	background-size: cover;
@@ -455,7 +443,7 @@ nav.show div#close-icon{
 
 #products .card .title {
 	font-size: 1.5rem;
-	margin-bottom: 0.75rem; /* 0.75 rem */
+	margin-bottom: 0.75rem;
 }
 
 #products .card-text {
@@ -541,8 +529,6 @@ nav.show div#close-icon{
 #contact .button #whatsapp-icon,
 #contact ul li .links-icon {
 	margin-right: 0.625rem;
-	/* width: 1.5rem;
-	height: 1.5rem; */
 }
 
 #contact ul.grid {
@@ -616,7 +602,6 @@ footer .social a:hover {
 
 	.container {
 		width: 1120px;
-		/* max-width: 90vw; */
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -709,12 +694,6 @@ footer .social a:hover {
 	.cards {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
-
-	/* Caso seja com ícones ou imagens que não vão até a borda do card */
-	/* .card {
-		padding-left: 3rem;
-		padding-right: 3rem;
-	} */
 
 	/* Testimonials */
 

@@ -190,5 +190,5 @@ window.addEventListener('scroll', function () {
 		#contact .text, #contact .links,
 		footer .brand, footer .social
 		`,
-		{ interval: 150}
+		{ interval: 150 }
 	);
