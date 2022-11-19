@@ -59,20 +59,21 @@ for(const link of links) {
 		allowTouchMove: true,
 		mousewheel: false,
 		keyboard: true,
+		grabCursor: true,
 
 		initialSlide: 1,
 
 		effect: 'cards',
 		cardsEffect: {
-			perSlideOffset: 75,
+			perSlideOffset: 95,
 			slideShadows: false,
 			perSlideRotate: 2
 		},
 
 		navigation: {
 			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+			prevEl: '.swiper-button-prev'
+		}
 	});
 
 	/* Testimonials Carousel Slider */
@@ -80,9 +81,13 @@ for(const link of links) {
 	const swiperTestimonials = new Swiper('#testimonials .swiper-container', {
 		mousewheel: false,
 		keyboard: true,
+		// grabCursor: true,
 
-		loop: true,
+		rewind: true,
 		slidesPerView: 1,
+
+		centeredSlides: true,
+		centeredSlidesBounds: true,
 
 		pagination: {
 			el: '#testimonials .swiper-pagination',
@@ -92,11 +97,11 @@ for(const link of links) {
 			dynamicMainBullets: 1
 		},
 
-		autoplay: {
-			delay: 10000,
-			disableOnInteraction: false,
-			pauseOnMouseEnter: true,
-		},
+		// autoplay: {
+		// 	delay: 10000,
+		// 	disableOnInteraction: false,
+		// 	pauseOnMouseEnter: true,
+		// },
 
 		breakpoints: {
 			767: {
