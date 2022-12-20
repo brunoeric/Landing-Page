@@ -1,4 +1,6 @@
 /* Menu Toggle */
+const body = document.querySelector(
+	'body');
 
 const nav = document.querySelector(
 	'#header nav');
@@ -10,6 +12,7 @@ for (const element of toggle) {
 	element.addEventListener(
 		'click', function () {
 			nav.classList.toggle('show');
+			body.classList.toggle('no-scroll');
 		})
 }
 
@@ -20,6 +23,8 @@ for(const link of links) {
 	link.addEventListener(
 		'click', function () {
 			nav.classList.remove('show');
+			body.classList.remove('no-scroll');
+
 		})
 }
 
@@ -47,7 +52,7 @@ for(const link of links) {
 		loop: true,
 
 		autoplay: {
-			delay: 8000,
+			delay: 4000,
 			disableOnInteraction: false,
 			pauseOnMouseEnter: true,
 		}
@@ -81,13 +86,15 @@ for(const link of links) {
 	const swiperTestimonials = new Swiper('#testimonials .swiper-container', {
 		mousewheel: false,
 		keyboard: true,
-		// grabCursor: true,
+		grabCursor: true,
+		touchEventsTarget: 'container',
+		spaceBetween: 100,
 
 		rewind: true,
 		slidesPerView: 1,
 
 		centeredSlides: true,
-		centeredSlidesBounds: true,
+		// centeredSlidesBounds: true,
 
 		pagination: {
 			el: '#testimonials .swiper-pagination',
@@ -97,21 +104,21 @@ for(const link of links) {
 			dynamicMainBullets: 1
 		},
 
-		// autoplay: {
-		// 	delay: 10000,
-		// 	disableOnInteraction: false,
-		// 	pauseOnMouseEnter: true,
-		// },
+		autoplay: {
+			delay: 8000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
+		},
 
-		breakpoints: {
-			767: {
-				slidesPerView: 2,
-				slidesPerGroup: 2,
-				setWrapperSize: true,
-				loopFillGroupWithBlank: true,
-				grabCursor: true
-			}
-		}
+		// breakpoints: {
+		// 	767: {
+		// 		slidesPerView: 2,
+		// 		slidesPerGroup: 2,
+		// 		setWrapperSize: true,
+		// 		loopFillGroupWithBlank: true,
+		// 		spaceBetween: 50,
+		// 	}
+		// }
 	});
 
 

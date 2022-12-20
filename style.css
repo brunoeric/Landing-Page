@@ -49,6 +49,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+body.no-scroll {
+	overflow: hidden;
+}
+
 .title {
 	font: 700 var(--title-font-size) var(--title-font);
 	color: var(--title-color);
@@ -343,6 +347,8 @@ nav.show div#close-icon{
 #home .text {
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
+	margin-top: auto;
+	margin-bottom: auto;
 	
 	text-align: center;
 }
@@ -380,6 +386,7 @@ nav.show div#close-icon{
 #about .image img {
 	/* position: relative; */
 	width: 100vmin;
+	/* max-width: 914px; */
 	height: 56vmin;
 }
 
@@ -391,6 +398,8 @@ nav.show div#close-icon{
 #about .text {
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 /* ------- PRODUCTS --------- */
@@ -433,7 +442,7 @@ nav.show div#close-icon{
 
 }
 
-#products .card-image {
+#products img.card-image {
 	width: 100%;
 	height: 40vmin;
 	max-height: 330px;
@@ -476,29 +485,26 @@ nav.show div#close-icon{
 
 /* Testimonials Swiper */
 
-#testimonials .swiper {
-	margin: auto;
+#testimonials .swiper-container {
+	width: 70vmin;
+	max-width: 500px;
+	height: max-content;
+	margin: 1rem auto 3rem auto;
 }
 
-#testimonials .swiper-container {
-	width: 100vw;
-	/* max-width: 200px; */
-	
-	margin: 1rem 0 3rem 0;
+#testimonials .swiper-wrapper {
+	    align-items: center;
 }
 
 #testimonials .swiper-slide {
-	display: grid;
-	justify-content: center;
-	
 	height: fit-content;
 }
 
 #testimonials .swiper-slide img {
-	width: 80vmin;
-	max-width: 330px;
-	/* width: 100%; */
+	width: 100%;
+	/* max-width: 300px; */
 	height: fit-content;
+	max-height: 800px;
 	background-size: cover;
 
 	background-color: var(--body-color);
@@ -606,8 +612,12 @@ footer .social a:hover {
 		margin-right: auto;
 	}
 
-	.section {
-		padding: 10rem 0;
+	.container.full-width {
+		width: 100vw;
+	}
+
+	.section, .section.stick-to-top {
+		padding: calc(var(--header-height) + 3rem) 0
 	}
 
 	.section header,
@@ -659,26 +669,30 @@ footer .social a:hover {
 		margin: 0 auto;
 		gap: 5rem;
 	}
-	
-	#home .text {
-		margin-left: 0;
-		/* margin-right: 5rem; */
+
+	#home .swiper {
+		order: 1;
 	}
 
 	#home #slideshow {
-		order: 1;
 		width: 700px;
 		height: 392px;
-	}
+		}
 
-	#home #slideshow::before {
-		top: -15%;
-		left: 5%;
-	}
+		/* #home #slideshow img { */
+		/* border-radius: 5px; */
+		/* } */
+
+	/* #home #slideshow::before { */
+		/* top: -15%; */
+		/* left: 5%; */
+	/* } */
 
 	#home .text {
 		order: 0;
 		max-width: 24rem;
+		
+		margin-left: 0;
 		text-align: left;
 	}
 
@@ -689,6 +703,18 @@ footer .social a:hover {
 		grid-auto-flow: column;
 	}
 
+	#about .image img {
+		width: 700px;
+		height: 392px;
+	}
+
+	#about .text {
+		text-align: left;
+	}
+
+	/* #about .text { */
+	/* } */
+
 	/* Products */
 
 	#products .container {
@@ -697,27 +723,8 @@ footer .social a:hover {
 
 	/* Testimonials */
 
-	#testimonials .container {
-		/* width: 1120px; */
-		/* margin: 0; */
-	}
-	
-	#testimonials .swiper {
-		/* width: 1120px; */
-		/* margin: auto; */
-	}
-
-	#testimonials .swiper-container {
-		width: 1120px;
-		/* margin: auto; */
-	}
-
-	#testimonials .swiper-wrapper {
-		/* margin: auto; */
-	}
-
-	#testimonials .swiper-slide {
-		
+	#testimonials .swiper-slide img {
+		width: 400px;
 	}
 
 	/* Contact */
