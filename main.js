@@ -59,7 +59,6 @@ for(const link of links) {
 	});
 
  	/* Products Carousel Slider */
-	
 	 const swiperProducts = new Swiper('#products .swiper-container', {
 		allowTouchMove: true,
 		mousewheel: false,
@@ -81,8 +80,37 @@ for(const link of links) {
 		}
 	});
 
-	/* Testimonials Carousel Slider */
+	const swiperGalleryThumbs = new Swiper('#gallery .thumbs-swiper', {
+		spaceBetween: 3,
+				slidesPerView: 5,
+				// freeMode: true,
+				watchSlidesProgress: true,
+	});
 
+	const swiperGallery = new Swiper('#gallery .main-swiper', {
+		keyboard: true,
+		grabCursor: true,
+		touchEventsTarget: 'container',
+		zoom: {
+			maxRatio: 3,
+		},
+
+		// autoHeight: true,
+		centeredSlides: true,
+		spaceBetween: 50,
+
+        // navigation: {
+          // nextEl: ".swiper-button-next",
+          // prevEl: ".swiper-button-prev",
+        // },
+        thumbs: {
+          swiper: swiperGalleryThumbs,
+        }
+	});
+
+
+
+	/* Testimonials Carousel Slider */
 	const swiperTestimonials = new Swiper('#testimonials .swiper-container', {
 		mousewheel: false,
 		keyboard: true,
@@ -123,8 +151,6 @@ for(const link of links) {
 
 
 
-
-
 /* On Scroll */
 
 window.addEventListener('scroll', function () {
@@ -132,20 +158,20 @@ window.addEventListener('scroll', function () {
 	activateMenuAtCurrentSection()
 });
 
-	/* header shadow toggle*/
+/* header shadow toggle*/
 
-	const header = document.querySelector(
-		'#header');
-	const headerHeight = header.offsetHeight;
+const header = document.querySelector(
+	'#header');
+const headerHeight = header.offsetHeight;
 
-	function changeHeaderWhenScrolling() {
-		
-		if (this.window.scrollY >= headerHeight) {
-			header.classList.add('scroll');
-		} else {
-			header.classList.remove('scroll');
-		}
+function changeHeaderWhenScrolling() {
+	
+	if (this.window.scrollY >= headerHeight) {
+		header.classList.add('scroll');
+	} else {
+		header.classList.remove('scroll');
 	}
+}
 
 	/* active nav button depending of the current site section on scroll */
 
@@ -198,7 +224,8 @@ window.addEventListener('scroll', function () {
 		#home .image, #home .text,
 		#about .image, #about .text,
 		#products header, #products .swiper,
-		#testimonials header, #testimonials .testimonials,
+		#gallery header, #gallery .media,
+		#testimonials header, #testimonials .swiper,
 		#contact .text, #contact .links,
 		footer .brand, footer .social
 		`,
