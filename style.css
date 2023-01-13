@@ -263,7 +263,7 @@ nav.show .menu ul {
 }
 
 nav.show ul.grid {
-	gap: 7vh; /* originally 8vh */
+	gap: 6vh; /* originally 8vh, then 7vh */
 }
 
 
@@ -442,12 +442,12 @@ nav.show div#close-icon{
 	margin-bottom: 2rem;
 }
 
-#gallery .media {
-	padding: 4rem 0;
+/* #gallery .media { */
+	/* padding: 4rem 0; */
 	/* height: 100vh; */
 
 	/* background-color: #000; */
-}
+/* } */
 
 /* swiper */
 
@@ -481,7 +481,8 @@ nav.show div#close-icon{
 	/* align-items: center; */
 	justify-content: center;
 
-	object-fit: cover;
+	object-fit: cover; /* or contain with background-color */
+	/* background-color: rgb(0, 0, 0); */
 }
 
 #gallery-thumbs .swiper-slide {

@@ -81,10 +81,11 @@ for(const link of links) {
 	});
 
 	const swiperGalleryThumbs = new Swiper('#gallery .thumbs-swiper', {
+		// loop: true,
 		spaceBetween: 3,
-				slidesPerView: 5,
+		slidesPerView: 5,
 				// freeMode: true,
-				watchSlidesProgress: true,
+		watchSlidesProgress: true,
 	});
 
 	const swiperGallery = new Swiper('#gallery .main-swiper', {
@@ -101,9 +102,15 @@ for(const link of links) {
 		spaceBetween: 50,
 
         // navigation: {
+					// prevEl: ".swiper-button-prev",
           // nextEl: ".swiper-button-next",
-          // prevEl: ".swiper-button-prev",
         // },
+
+				// pagination: {
+					// el: '.swiper-pagination',
+					// type: 'fraction',
+				// },
+
         thumbs: {
           swiper: swiperGalleryThumbs,
         }
