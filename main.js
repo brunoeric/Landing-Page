@@ -88,6 +88,7 @@ for(const link of links) {
 	});
 
 	const swiperGallery = new Swiper('#gallery .main-swiper', {
+		loop: true,
 		keyboard: true,
 		grabCursor: true,
 		touchEventsTarget: 'container',
