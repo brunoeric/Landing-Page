@@ -65,7 +65,7 @@ for(const link of links) {
 		keyboard: true,
 		grabCursor: true,
 
-		initialSlide: 1,
+		initialSlide: 1, /* first slide is 0 */
 
 		effect: 'cards',
 		cardsEffect: {
@@ -82,8 +82,9 @@ for(const link of links) {
 
 	const swiperGalleryThumbs = new Swiper('#gallery .thumbs-swiper', {
 		// loop: true,
+		grabCursor: true,
 		spaceBetween: 3,
-		slidesPerView: 5,
+		slidesPerView: 7,
 				// freeMode: true,
 		watchSlidesProgress: true,
 	});
@@ -113,6 +114,7 @@ for(const link of links) {
 
         thumbs: {
           swiper: swiperGalleryThumbs,
+					// autoScrollOffset: 1
         }
 	});
 
@@ -188,6 +190,7 @@ function changeHeaderWhenScrolling() {
 
 	function activateMenuAtCurrentSection() {
 
+		// TODO the following code is LEGACY. Fix it after reading the new method:
 		const activeSessionObserverPosition = window.pageYOffset + (window.innerHeight / 8) * 4;
 
 		for (const section of sections) {
@@ -229,13 +232,9 @@ function changeHeaderWhenScrolling() {
 
 	scrollReveal.reveal(
 		`
-		#home .image, #home .text,
-		#about .image, #about .text,
-		#products header, #products .swiper,
-		#gallery header, #gallery .media,
-		#testimonials header, #testimonials .swiper,
-		#contact .text, #contact .links,
-		footer .brand, footer .social
+		#home .swiper, #home .text,
+		#products header, #products .cards,
+		#about .image, #about .text
 		`,
 		{ interval: 150 }
 	);

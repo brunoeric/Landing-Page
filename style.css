@@ -97,6 +97,10 @@ body.no-scroll {
 	);
 }
 
+.text-link {
+	color: var(--base-color);
+}
+
 	/* Swiper layout */
 
 .swiper-pagination-bullet {
@@ -340,31 +344,6 @@ nav.show div#close-icon{
 	margin-bottom: 2rem;
 }
 
-/* ------- ABOUT --------- */
-
-#about .container {
-	margin: 0;
-}
-
-#about .image {
-	/* position: relative; */
-	margin: auto;
-}
-
-#about .image img {
-	/* position: relative; */
-	width: 100vmin;
-	/* max-width: 914px; */
-	height: 56vmin;
-}
-
-#about .text {
-	margin-left: 1.5rem;
-	margin-right: 1.5rem;
-	margin-top: auto;
-	margin-bottom: auto;
-}
-
 /* ------- PRODUCTS --------- */
 
 #products .container {
@@ -378,7 +357,7 @@ nav.show div#close-icon{
 
 #products .swiper-container {
 	width: 70vmin;
-	max-width: 500px;
+	max-width: 400px;
 	height: max-content;
 	margin: auto;
 }
@@ -405,12 +384,17 @@ nav.show div#close-icon{
 
 }
 
+#products .card {
+	min-height: 310px;
+}
+
 #products img.card-image {
 	width: 100%;
 	height: 40vmin;
 	max-height: 330px;
 
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 	border-radius: 0.3rem 0.3rem 0 0;
 	
 	background-size: cover;
@@ -422,8 +406,33 @@ nav.show div#close-icon{
 }
 
 #products .card-text {
-	height: 11rem;
+	height: 6rem;
 	padding: 0 2rem 3.625rem 2rem;
+}
+
+/* ------- ABOUT --------- */
+
+#about .container {
+	margin: 0;
+}
+
+#about .image {
+	/* position: relative; */
+	margin: auto;
+}
+
+#about .image img {
+	/* position: relative; */
+	width: 100vmin;
+	/* max-width: 914px; */
+	height: 56vmin;
+}
+
+#about .text {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 /* ------- GALLERY --------------- */
@@ -464,6 +473,7 @@ nav.show div#close-icon{
 #gallery  #gallery-frame img {
 	width: 100%;
 	/* height: 100%; */
+	/* max-height: 350px; */
 	max-height: 60vh;
 
 	object-fit: contain;
@@ -471,7 +481,7 @@ nav.show div#close-icon{
 
 #gallery #gallery-thumbs {
 	width: 100vmin;
-	height: 15vmin;
+	height: 12vmin; /* original: 15vmin */
 }
 
 #gallery #gallery-thumbs img {
@@ -520,6 +530,7 @@ nav.show div#close-icon{
 	max-width: 500px;
 	height: max-content;
 	margin: 1rem auto 3rem auto;
+	padding-bottom: 3rem;;
 }
 
 #testimonials .swiper-wrapper {
@@ -531,11 +542,12 @@ nav.show div#close-icon{
 }
 
 #testimonials .swiper-slide img {
-	width: 100%;
+	max-width: 100%;
 	/* max-width: 300px; */
 	height: fit-content;
+	/* max-height: 400px; */
 	max-height: 800px;
-	background-size: cover;
+	background-size: contain;
 
 	background-color: var(--body-color);
 	
@@ -563,7 +575,7 @@ nav.show div#close-icon{
 }
 
 #contact .button #whatsapp-icon,
-#contact ul li .links-icon {
+#contact .links-icon {
 	margin-right: 0.625rem;
 }
 
@@ -576,8 +588,12 @@ nav.show div#close-icon{
 	align-items: center;
 }
 
-#contact ul li #phone-icon path {
+#contact #phone-icon path {
 	stroke: var(--base-color);
+}
+
+#contact #phone-icon#transparent-icon path {
+	stroke: transparent;
 }
 
 #contact ul li #map-pin-icon path,
@@ -718,22 +734,6 @@ footer .social a:hover {
 		text-align: left;
 	}
 
-	/* About */
-
-	#about .container {
-		margin: 0 auto;
-		grid-auto-flow: column;
-	}
-
-	#about .image img {
-		width: 700px;
-		height: 392px;
-	}
-
-	#about .text {
-		text-align: left;
-	}
-
 	/* Products */
 
 	#products .container {
@@ -751,6 +751,22 @@ footer .social a:hover {
 
 	#testimonials .swiper-slide img {
 		width: 325px;
+	}
+
+	/* About */
+
+	#about .container {
+		margin: 0 auto;
+		grid-auto-flow: column;
+	}
+
+	#about .image img {
+		width: 700px;
+		height: 392px;
+	}
+
+	#about .text {
+		text-align: left;
 	}
 
 	/* Contact */
