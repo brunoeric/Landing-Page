@@ -2,7 +2,7 @@
 
 *[PT-BR]* Página dinâmica de apresentação para empresa real da área de decorações, que atua com cortinas e persianas.
 
-*[EN]* I made a landing page for a company that sells curtains and blinds.
+*[EN]* I made a landing page for a company that sells curtains and blinds in Brazil.
 
 link: [premiercortinas.com](https://premiercortinas.com)
 
@@ -10,8 +10,7 @@ link: [premiercortinas.com](https://premiercortinas.com)
 
 ![premier_example1](https://github.com/brunoeric/Landing-Page/assets/84044230/2fce1fed-190b-48a3-92f6-a878826f7d04)
 
-![premier_example2](https://github.com/brunoeric/Landing-Page/assets/84044230/9f193865-647e-4b7d-8b37-08244fa17156)
-
+![premier_example3 1](https://github.com/brunoeric/Landing-Page/assets/84044230/76c57082-691f-4fe6-9ce0-971ba4211e5b)
 
 ## Implementações Futuras:
 - [x] Design da página para celulares e tablets
